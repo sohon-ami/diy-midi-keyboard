@@ -1,1 +1,26 @@
+# Journal
 
+## Idea and Planning
+- Concept: MIDI piano with drum pads and TFT showing chords/notes
+- Estimated time: 2 hours
+
+## Schematic Design
+- Plan pin layout and switch matrix
+- Estimated time: 3 hours
+
+## PCB Layout
+- Rough placement of keys, drum pads, DAC, TFT, and encoders
+- Estimated time: 2 hours
+
+## Firmware Planning
+- Key matrix: `keypad` library
+- Drum pads: integrated into matrix
+- Rotary encoders: `rotaryio` library
+- TFT: `displayio` library
+- DAC: `audiobusio` library
+- MIDI: `usb_midi` + `adafruit_midi` libraries
+- Estimated time: 4 hours
+
+## Next Steps
+- Create rough schematic and PCB placeholder images
+- Write initial placeholder code for matrix, TFT, and MIDI
