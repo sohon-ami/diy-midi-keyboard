@@ -1,0 +1,13 @@
+import usb_midi
+import adafruit_midi
+from adafruit_midi.note_on import NoteOn
+from adafruit_midi.note_off import NoteOff
+
+midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)
+
+# Map piano keys
+piano_base_note = 48  # C3
+if event.pressed:
+    midi.send(NoteOn(piano_base_note + event.key_number, 120))
+else:
+    midi.send(NoteOff(piano_base_note + event.key_number, 0))
