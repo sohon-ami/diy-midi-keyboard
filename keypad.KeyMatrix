@@ -1,0 +1,18 @@
+import board
+import keypad
+import time
+
+# Example row/column pins
+rows = [board.GP0, board.GP1, board.GP2, board.GP3, board.GP4, board.GP5]  # 6 rows
+cols = [board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11]  # 6 columns
+
+# Create the KeyMatrix
+matrix = keypad.KeyMatrix(rows, cols, columns_to_anodes=True)
+
+while True:
+    event = matrix.events.get()
+    if event:
+        if event.pressed:
+            print(f"Key {event.key_number} pressed")
+        else:
+            print(f"Key {event.key_number} released")
